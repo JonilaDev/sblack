@@ -92,7 +92,7 @@ h1 {
 
 h2 {
   font-weight: 300;
-  margin-bottom: 1.5em;
+  margin-bottom: .5em;
   line-height: 1.5em;
   font-size: 1.5em;
   max-width: 21em; }
@@ -118,9 +118,9 @@ main {
   overflow: hidden;
   margin: 0;
   position: relative; }
-  main div {
+  main > div {
     position: relative; }
-    main div:first-child {
+    main > div:first-child {
       padding: 5vw;
       box-sizing: border-box;
       flex: 0 1 55%;
@@ -129,10 +129,10 @@ main {
       justify-content: center;
       flex-flow: column nowrap; }
       @media (max-width: 600px) {
-        main div:first-child {
+        main > div:first-child {
           flex: 0 1 100%; } }
     @media (max-width: 600px) {
-      main div:nth-child(2) {
+      main > div:nth-child(2) {
         display: none; } }
 
 #preview {
@@ -174,13 +174,12 @@ main {
       margin-left: .25em; }
 
 contribute {
-  margin-top: 2em;
-  font-size: .95em;
+  font-size: 1.1em;
   line-height: 1.5em;
-  opacity: .6; }
+  opacity: .5; }
 
 info {
-  margin-top: 0em;
+  margin-top: .9em;
   font-size: .8em;
   opacity: .3; }
 
@@ -304,3 +303,68 @@ iframe {
   .disclaimer:hover {
     background: rgba(255, 255, 255, 0.1);
     color: white !important; }
+
+div#suite {
+  margin-top: 2em; }
+  div#suite > span {
+    text-align: center;
+    margin-bottom: .7em;
+    width: 100%;
+    display: block; }
+  div#suite a {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5em;
+    padding: 1.1em 1.4em 0.9em 1.3em;
+    position: relative;
+    text-decoration: none; }
+    div#suite a div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left; }
+    div#suite a h1 {
+      color: white;
+      font-size: 1.3em;
+      margin: 0 0 0.3em;
+      font-weight: 500; }
+    div#suite a p {
+      line-height: 1.5;
+      color: white;
+      margin-bottom: 0.2em;
+      opacity: 0.4; }
+    div#suite a img {
+      max-width: 5.6em;
+      width: 100%;
+      object-fit: contain;
+      margin-right: 3.8em;
+      display: block; }
+    div#suite a #glyph {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(6px);
+      opacity: 0;
+      transition: 0.2s all cubic-bezier(0.075, 0.82, 0.165, 1); }
+      div#suite a #glyph img {
+        width: 20px;
+        height: 20px;
+        margin: 0; }
+    div#suite a:hover {
+      background: rgba(255, 255, 255, 0.2); }
+      div#suite a:hover #glyph {
+        transform: translateX(0);
+        opacity: .8; }
+  @media screen and (max-width: 600px) {
+    div#suite {
+      margin-top: 2em; }
+      div#suite h1 {
+        font-size: 1.2em !important; } }
